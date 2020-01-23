@@ -1,0 +1,138 @@
+$error-red-color: #ca181f;
+
+.block {
+  display: flex;
+  flex-direction: column;
+}
+.input-block__text {
+  backdrop-filter: none;
+  -webkit-appearance: none;
+  height: 42px;
+  border: 1px solid #acb6c3;
+  font-size: 16px;
+  font-family: "VTB Group" !important;
+  line-height: 20px;
+  padding: 0px 5px;
+  border-radius: 3px;
+  color: #2f3441;
+  width: 100%;
+  &::placeholder {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  -moz-appearance: textfield;
+
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:invalid {
+    // box-shadow: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 2px #979797;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    color: transparent;
+    opacity: 1;
+    background: url(/assets/img/ico/calendar-logo.svg) no-repeat center;
+    border: 1px solid;
+    background-size: contain;
+  }
+
+  &::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  &.ng-touched.ng-invalid {
+    border: 1px solid $error-red-color;
+
+    &:hover {
+      box-shadow: 0 0 2px $error-red-color;
+    }
+
+    &:focus {
+      outline-width: 2px;
+      box-shadow: 0 0 2px $error-red-color;
+      outline-color: $error-red-color;
+      border-color: $error-red-color;
+    }
+  }
+
+  &[readonly] {
+    background-color: #f3f7fa;
+    border: 1px solid #acb6c3;
+    cursor: default;
+    pointer-events: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:focus {
+      outline-color: transparent;
+      outline-style: none;
+      box-shadow: none;
+    }
+  }
+
+  &:focus {
+    outline-color: #00aaff;
+    outline-width: 2px;
+    box-shadow: 0 0 2px #00aaff;
+  }
+}
+.input-block__error {
+  visibility: collapse;
+  color: $error-red-color;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 4px;
+
+  &_show {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1204px) {
+  .input-block {
+    &__text {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &__error {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 539px) {
+  .input-block {
+    &__text {
+      height: 42px;
+    }
+  }
+}
+
+@media (min-width: 540px) and (max-width: 1204px) {
+  .input-block {
+    &__text {
+      height: 40px;
+    }
+  }
+}
+
+@media (min-width: 1205px) and (max-width: 1919px) {
+  .input-block {
+    &__text {
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+}

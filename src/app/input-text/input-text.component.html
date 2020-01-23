@@ -1,0 +1,8 @@
+<div class="block">
+  <input [autofocus]="focus" [pattern]="customMask" [readonly]="disabled" [(ngModel)]="value" name="valueName"
+         #val="ngModel" class="input-block__text" [type]="type" [placeholder]="placeholderExtension"
+         [minlength]="mnLength" [maxLength]="mxLength" (focusout)="handleFocusout($event)" autocomplete="off"
+         (focus)="handleFocus($event)" autocomplete="off" [required]="isValidate" />
+  <span [ngClass]="{'input-block__error_show':val.invalid && val.touched && isValidate}"
+        class="input-block__error">{{errorMessage}}</span>
+</div>
